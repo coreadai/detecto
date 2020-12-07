@@ -251,7 +251,7 @@ def plot_prediction_grid(model, images, dim=None, figsize=None, score_filter=0.6
     plt.show()
 
 
-def show_labeled_image(image, boxes, labels=None):
+def show_labeled_image(image, boxes, labels=None, output_path=None):
     """Show the image along with the specified boxes around detected objects.
     Also displays each box's label if a list of labels is provided.
 
@@ -305,4 +305,5 @@ def show_labeled_image(image, boxes, labels=None):
 
         ax.add_patch(rect)
 
-    plt.show()
+    if not output_path is None:
+        plt.savefig(output_path)
